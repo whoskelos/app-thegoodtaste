@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './componentes/nav/nav.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { MainComponent } from './componentes/main/main.component';
-import { RestaurantesComponent } from './componentes/restaurantes/restaurantes.component';
-import { RestauranteComponent } from './componentes/restaurante/restaurante.component';
+import { HomeComponent } from './componentes/home/home.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -15,12 +15,12 @@ import { RestauranteComponent } from './componentes/restaurante/restaurante.comp
     NavComponent,
     FooterComponent,
     MainComponent,
-    RestaurantesComponent,
-    RestauranteComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
