@@ -7,15 +7,14 @@ import { Restaurante } from '../models/restaurante';
 })
 export class RestauranteService {
 
-  selectedRestaurante!: Restaurante;
-  restaurantes!:Restaurante[];
-  readonly api = 'http://localhost:3000/api/restaurantes';
+  api = 'http://localhost:3000/api/restaurantes';
+
+  restaurantes : Restaurante[] | undefined;
 
   constructor(private http: HttpClient) { }
 
   getRestaurantes(){
-    return this.http.get(this.api)
-    .subscribe();
+    return this.http.get<Restaurante[]>(this.api);
   }
 
   postRestaurante(Restaurante: Restaurante){

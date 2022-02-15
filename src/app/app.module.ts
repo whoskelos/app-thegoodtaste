@@ -8,6 +8,8 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { MainComponent } from './componentes/main/main.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { HttpClientModule } from "@angular/common/http";
+import { RestaurantesComponent } from './componentes/restaurantes/restaurantes.component';
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { HttpClientModule } from "@angular/common/http";
     NavComponent,
     FooterComponent,
     MainComponent,
-    HomeComponent
+    HomeComponent,
+    RestaurantesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
