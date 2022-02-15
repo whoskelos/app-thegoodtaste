@@ -9,7 +9,7 @@ export class RestauranteService {
 
   api = 'http://localhost:3000/api/restaurantes';
 
-  restaurantes : Restaurante[] | undefined;
+  restaurantes !: Restaurante[];
 
   constructor(private http: HttpClient) { }
 

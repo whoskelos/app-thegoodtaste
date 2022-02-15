@@ -13,9 +13,10 @@ export class RestaurantesComponent implements OnInit {
   faUtensils = faUtensils;
   faStore = faStore;
 
-  constructor(private restauranteService: RestauranteService) { }
+  constructor(public restauranteService: RestauranteService) { }
 
   ngOnInit(): void {
+    this.getRestaurantes();
   }
   
   

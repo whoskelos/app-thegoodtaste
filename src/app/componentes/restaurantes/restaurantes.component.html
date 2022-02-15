@@ -28,17 +28,14 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6 p-3 border-top border-bottom d-md-flex">
+    <div class="col-md-6 p-3 border-top border-bottom d-md-flex flex-md-wrap" *ngFor="let restaurante of restauranteService.restaurantes">
         <div class="imagenRestaurante">
-            <img src="assets/img/tacos.jpg" alt="imagen restaurante">
+            <img src="assets/img/{{restaurante.foto}}" alt="imagen restaurante">
         </div>
         <div class="datosRestaurante">
-            <a name="" id="" class="btn btn-warning" href="#" role="button">Tipo</a>
-            <p>Nombre de sitio</p>
-            <p>Ubicacion del sitio</p>
+            <a name="" id="" class="btn btn-warning" href="#" role="button">{{restaurante.tipo}}</a>
+            <p>{{restaurante.nombre}}</p>
+            <p>{{restaurante.ubicacion}}</p>
         </div>
-    </div>
-    <div class="col-md-6">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97405.35391476034!2d-3.8556016281540018!3d40.277587043906806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd41892212073e19%3A0xfdfa61a80080400c!2sGoiko!5e0!3m2!1ses!2ses!4v1644885618306!5m2!1ses!2ses" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 </div>
