@@ -11,7 +11,7 @@ restauranteCtrl.crearRestaurante = async (req,res) => {
     const restaurante = new Restaurante(req.body);
     await restaurante.save();
     res.json({
-        'status': 'Empleado guardado'
+        'status': 'Restaurante guardado'
     });
 };
 
@@ -41,3 +41,4 @@ restauranteCtrl.eliminarRestaurante = async (req,res) => {
 }
 
 module.exports = restauranteCtrl;
+

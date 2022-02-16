@@ -16,6 +16,7 @@ app.use(cors({origin:'http://localhost:4200'}));
 
 //Rutas
 app.use('/api/restaurantes',require('./routes/restaurantes.routes'));
+app.use('/api',require('./routes/user.routes'));
 
 
 //Arrancando el servidor
