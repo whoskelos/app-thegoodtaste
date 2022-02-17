@@ -10,6 +10,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { HttpClientModule } from "@angular/common/http";
 import { RestaurantesComponent } from './componentes/restaurantes/restaurantes.component';
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { RestauranteDetalleComponent } from './componentes/restaurante-detalle/restaurante-detalle.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
     FooterComponent,
     MainComponent,
     HomeComponent,
-    RestaurantesComponent
+    RestaurantesComponent,
+    RestauranteDetalleComponent
   ],
   imports: [
     BrowserModule,

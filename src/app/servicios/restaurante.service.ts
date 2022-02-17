@@ -10,6 +10,7 @@ export class RestauranteService {
   api = 'http://localhost:3000/api/restaurantes';
 
   restaurantes !: Restaurante[];
+  restaurante !: Restaurante;
 
   constructor(private http: HttpClient) { }
 
@@ -27,5 +28,9 @@ export class RestauranteService {
 
   deleteRestaurante(_id: string){
     return this.http.delete(this.api + `/${_id}`)
+  }
+
+  getRestaurante(_id: string){
+    return this.http.get<any>(this.api + `/${_id}`)
   }
 }
