@@ -1,9 +1,12 @@
 export class Restaurante{
-    _id!: String;
-    nombre!: string;
-    ubicacion!:string;
-    tipo!:string;
-    likes!:number ;
-    comentarios!:string[];
-    foto!:string;
+    constructor (
+    public _id: String,
+    public nombre: string,
+    public ubicacion:string,
+    public tipo:string,
+    public likes:number,
+    public descripcion:string,
+    public comentarios:string[],
+    public foto:string
+    ){}
 }

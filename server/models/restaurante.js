@@ -7,6 +7,7 @@ const restauranteSchema = new Schema({
   tipo: { type: String, required: true },
   ubicacion: { type: String, required: true },
   likes: { type: Number, required: true },
+  descripcion: {type: String, required: true},
   comentarios: {
     type: [String],
     required: true,
