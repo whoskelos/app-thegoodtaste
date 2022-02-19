@@ -12,3 +12,9 @@
 .btn-login{
     font-family: 'Roboto', sans-serif !important;
 }
+
+.dropdown-menu[data-bs-popper] {
+    top: 100% !important;
+    left: -45px !important;
+    margin-top: 0.125rem !important;
+}

@@ -10,7 +10,7 @@ import { Restaurante } from 'src/app/models/restaurante';
   styleUrls: ['./restaurantes.component.css']
 })
 export class RestaurantesComponent implements OnInit {
-  
+
   faUtensils = faUtensils;
   faStore = faStore;
 
@@ -21,15 +21,27 @@ export class RestaurantesComponent implements OnInit {
   ngOnInit(): void {
     this.getRestaurantes();
   }
-  
-  
-  getRestaurantes(){
+
+
+  getRestaurantes() {
     this.restauranteService.getRestaurantes().subscribe(
       res => {
         this.restaurantes = res;
       },
       err => console.log(err)
-    );   
+    );
   }
+
+
+  getRestaurantePuntuacion() {
+    this.restauranteService.getRestaurantes().subscribe(
+      res => {
+        console.log(res.sort((a, b) => b.likes - a.likes));
+        
+      },
+      err => console.log(err)
+    );
+  }
+
 
 }
