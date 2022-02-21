@@ -1,51 +1,31 @@
-<section class="main d-flex" id="fondo-registro">
-    <div class="container d-flex justify-content-center align-items-center">
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-6 text-white">
-                <h1 class="tituloRegistro d-none d-md-block">Iniciar Sesion</h1>
-                <hr class="bg-light d-none d-md-block">
-                <p class="h4 text-center text-md-start">Inicia sesion y accede a tus resenas, podras crear, editar y
-                    eliminar. Si no estas registrado unete a nosotros</p>
-                <div class="text-center text-md-start">
-                    <!-- <button class="btn btn-danger btn-lg">
-                        Adelante
-                        <i class="fas fa-play mx-2"></i>
-                    </button> -->
-                </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="text-center text-dark mt-5">Inicie sesión</h2>
+            <div class="card my-5">
+
+                <form class="card-body cardbody-color p-lg-5">
+
+                    <div class="text-center">
+                        <img src="assets/img/user-login.png"
+                            class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3" width="200px"
+                            alt="profile">
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="Username" aria-describedby="emailHelp"
+                            placeholder="User Name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" id="password" placeholder="password">
+                    </div>
+                    <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100">Entrar</button>
+                    </div>
+                    <div id="emailHelp" class="form-text text-center mb-5 text-dark">¿No estás registrado? <a routerLink="/" class="text-dark fw-bold">Create una cuenta</a>
+                    </div>
+                </form>
             </div>
 
-            <!-- formulario -->
-            <div class="col-md-6 mt-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="text-center text-dark"><strong>Iniciar Sesion</strong></h3>
-                        <hr>
-                        <form action="#" method="post">
-                            <div class="form-floating mb-3">
-                                <input type="text" name="usuario" id="usuario" class="form-control" id="floatingInput"
-                                    placeholder="name@example.com">
-                                <label for="floatingInput" class="text-dark"><i
-                                        class="fas fa-user mx-2"></i>Usuario</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="password" name="password" id="password" class="form-control"
-                                    id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput" class="text-dark"><i
-                                        class="fas fa-key mx-2"></i>Contrasena</label>
-                            </div>
-                            <div class="text-center text-md-start my-2">
-                                <button class="btn btn-danger" type="button" id="btnAcceder">
-                                    Acceder
-                                </button>
-                                <button class="btn btn-secondary my-2" type="button" id="btnRegistro">
-                                    Registrarse
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="mensajeError text-danger mx-2"></div>
-                </div>
-            </div>
         </div>
     </div>
-</section>
+</div>
