@@ -4,7 +4,12 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema({
     email: String,
-    password: String
+    password: String,
+    admin: Boolean,
+    favoritos: {
+        type: [String],
+        required: true,
+      }
 },{
     timestamps: true
 });

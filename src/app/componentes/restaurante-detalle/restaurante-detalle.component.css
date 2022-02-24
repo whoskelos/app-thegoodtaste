@@ -5,3 +5,8 @@ img{
 .txt-descripcion{
     font-weight: 400;
 }
+
+.like-img{
+    width: 45px;
+    cursor: pointer;
+}

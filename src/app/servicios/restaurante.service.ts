@@ -22,6 +22,10 @@ export class RestauranteService {
     return this.http.post(this.api,Restaurante);
   }
 
+  getRestauranteById(_id: string) : Observable<any>{
+    return this.http.get(this.api + `/${_id}`)
+  }
+  
   // putRestaurante(Restaurante: Restaurante){
   //   return this.http.put(this.api + `/${Restaurante._id}`,Restaurante);
   // }
@@ -30,7 +34,4 @@ export class RestauranteService {
   //   return this.http.delete(this.api + `/${_id}`)
   // }
 
-  getRestauranteById(_id: string) : Observable<any>{
-    return this.http.get(this.api + `/${_id}`)
-  }
 }

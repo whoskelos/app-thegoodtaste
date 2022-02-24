@@ -1,5 +1,8 @@
 const express = require('express');
+const userCtrl = require('../controllers/user.controller');
 const router = express.Router();
+
+// const jwt = require('jsonwebtoken');
 
 const User = require('../controllers/user.controller');
 
@@ -9,16 +12,25 @@ router.post('/signin',User.getUser);
 router.put('/:id',User.editarUser);
 router.delete('/:id',User.eliminarUser);
 
-router.get('/favoritos', verifyToken , (req,res) =>{
-
+//ruta privada para ver restaurantes que sean favoritos de cada usuario
+router.get('/favoritos', User.verifyToken , (req,res) =>{
+    console.log(res);
 });
+
+
+// function verifyToken(req, res, next){
+//     if(!req.headers.authorization){
+//         return res.status(401).send("Solicitud no permitda");
+//     }
+
+//     const token = req.headers.authorization.split(' ')[1];
+//     if (token === null) {
+//         return res.status(401).send("Solicitud no permitda");
+//     }
+
+//     const payload = jwt.verify('secretKey');
+//     console.log(payload);
+// }
 
 module.exports = router;
 
-//ruta privada para ver restaurantes que sean favoritos de cada usuario
-
-function verifyToken(req, res, next){
-    if(!req.headers.authorization){
-        return res.status(401).send("Solicitud no permitda");
-    }
-}

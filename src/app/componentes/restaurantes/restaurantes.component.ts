@@ -15,6 +15,7 @@ export class RestaurantesComponent implements OnInit {
   faStore = faStore;
 
   public restaurantes !: Restaurante[];
+  public restaurantesFiltrados !: Restaurante[];
 
   constructor(public restauranteService: RestauranteService) { }
 
@@ -32,12 +33,21 @@ export class RestaurantesComponent implements OnInit {
     );
   }
 
-
-  getRestaurantePuntuacion() {
+//funcion que saca filtra por los que más likes tienen de mayor a menor
+  getRestaurantesPuntuacion() {
     this.restauranteService.getRestaurantes().subscribe(
       res => {
-        console.log(res.sort((a, b) => b.likes - a.likes));
+        console.log(res.sort((a,b)=>b.likes - a.likes));
         
+      },
+      err => console.log(err)
+    );
+  }
+//funcion que saca filtra por los que más comentarios tienen de mayor a menor
+  getRestaurantesComentarios(){
+    this.restauranteService.getRestaurantes().subscribe(
+      res => {
+        console.log(res.sort((a,b)=> b.comentarios.length - a.comentarios.length));
       },
       err => console.log(err)
     );

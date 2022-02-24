@@ -20,14 +20,14 @@
     <div class="col">
         <h1 class="display-5 text-center">Los mejores restaurantes de Madrid </h1>
         <div class="btn-filtros p-1 d-flex justify-content-center">
-            <a class="btn btn-danger rounded-pill mx-2" role="button" (click)="getRestaurantePuntuacion()">Puntuacion</a>
-            <a class="btn btn-danger rounded-pill mx-2" role="button">Comentarios</a>
+            <a class="btn btn-danger rounded-pill mx-2" role="button" (click)="getRestaurantesPuntuacion()">Puntuacion</a>
+            <a class="btn btn-danger rounded-pill mx-2" role="button" (click)="getRestaurantesComentarios()">Comentarios</a>
         </div>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-6 p-3 border-top border-bottom d-md-flex flex-md-wrap cardRestaurante" *ngFor="let restaurante of restaurantes">
+    <div class="col-md-6 p-3 border-top border-bottom d-md-flex flex-md-wrap cardRestaurante border-end" *ngFor="let restaurante of restaurantes">
         <div class="imagenRestaurante" routerLink="/restaurantes/{{ restaurante._id }}">
             <img src="assets/img/{{restaurante.foto}}" alt="imagen restaurante">
         </div>
