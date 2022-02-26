@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col">
+        <h1 class="text-center my-4">Lista de usuarios</h1>
+        <table class="table table-dark table-striped text-center">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of usuarios">
+                    <td scope="row">{{ user._id }}</td>
+                    <td>{{ user.email }}</td>
+                    <td> *********</td>
+                    <td (click)="mostrarForm()" class="text-primary">
+                        <fa-icon [icon]="faEdit" size="lg"></fa-icon>
+                    </td>
+                    <td (click)="eliminarUsuario(user._id)" class="text-danger">
+                        <fa-icon [icon]="faTrash" size="lg"></fa-icon>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col" *ngIf="!!mostrarFormulario">
+        <h1 class="text-center my-4">Editar Usuario</h1>
+        <div class="container text-white">
+            <div class="form">
+                <form class="login-form">
+                    <input type="text" name="email" placeholder="email" />
+                    <input type="password" name="password" placeholder="password" />
+                    <button class="bg-danger">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

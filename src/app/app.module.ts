@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './componentes/nav/nav.component';
 import { FooterComponent } from './componentes/footer/footer.component';
-import { MainComponent } from './componentes/main/main.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { RestaurantesComponent } from './componentes/restaurantes/restaurantes.component';
@@ -19,20 +18,25 @@ import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from "./servicios/token-interceptor.service";
 import { PanelAdminComponent } from './componentes/panel-admin/panel-admin.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { Filter2Pipe } from './pipes/filter2.pipe';
+import { GestionUsuariosComponent } from './componentes/gestion-usuarios/gestion-usuarios.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     FooterComponent,
-    MainComponent,
     HomeComponent,
     RestaurantesComponent,
     RestauranteDetalleComponent,
     LoginComponent,
     RegistroComponent,
     FavoritosComponent,
-    PanelAdminComponent
+    PanelAdminComponent,
+    FilterPipe,
+    Filter2Pipe,
+    GestionUsuariosComponent
   ],
   imports: [
     BrowserModule,

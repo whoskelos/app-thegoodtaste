@@ -3,15 +3,15 @@
         <div class="buscador d-sm-flex align-items-sm-center ">
             <div class="tipoBusqueda p-3 border border-secondary me-sm-2 mb-2">
                 <fa-icon [icon]="faUtensils" size="lg"></fa-icon>
-                <input type="text" class="rounded-pill bordeInputs mx-2" placeholder="Asador">
+                <input type="text" class="text-center rounded-pill bordeInputs mx-2" placeholder="Asador" name="filterRest" [(ngModel)] = "filterRest">
             </div>
             <div class="ciudadBusqueda p-3 border border-secondary mb-2">
                 <fa-icon [icon]="faStore" size="lg"></fa-icon>
-                <input type="text" class="rounded-pill bordeInputs mx-2" placeholder="Madrid">
+                <input type="text" class="text-center rounded-pill bordeInputs mx-2" placeholder="Madrid" name="filterRest2" [(ngModel)] = "filterRest2">
             </div>
-            <div class="btnBuscar d-flex justify-content-center">
+            <!-- <div class="btnBuscar d-flex justify-content-center">
                 <a class="btn btn-danger rounded-pill mx-sm-3" role="button">Buscar</a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
@@ -27,7 +27,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-6 p-3 border-top border-bottom d-md-flex flex-md-wrap cardRestaurante border-end" *ngFor="let restaurante of restaurantes">
+    <div class="col-md-6 p-3 border-top border-bottom d-md-flex flex-md-wrap cardRestaurante border-end" *ngFor="let restaurante of restaurantes | filter:filterRest | filter2:filterRest2">
         <div class="imagenRestaurante" routerLink="/restaurantes/{{ restaurante._id }}">
             <img src="assets/img/{{restaurante.foto}}" alt="imagen restaurante">
         </div>

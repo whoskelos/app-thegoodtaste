@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from "@angular/router";
+import { Usuarios } from '../models/usuario';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthServiceService {
 
-  url = "http://localhost:3000/api/users";
+  api = "http://localhost:3000/api/users";
 
   constructor(
     private http:HttpClient,
@@ -15,11 +17,11 @@ export class AuthServiceService {
     ) { }
 
   registrarse(user : any){
-    return this.http.post<any>(this.url + '/signup', user);
+    return this.http.post<any>(this.api + '/signup', user);
   }
 
   iniciarSesion(user : any){
-    return this.http.post<any>(this.url + '/signin', user);
+    return this.http.post<any>(this.api + '/signin', user);
   }
 
   estaLogueado(){
@@ -34,6 +36,17 @@ export class AuthServiceService {
     return localStorage.getItem("token");
   }
 
+  getUsuarios(){
+    return this.http.get<Usuarios[]>(this.api);
+  }
+  
+  eliminarUsuario(_id: String) : Observable<any> {
+    return this.http.delete(this.api + `/${_id}`);
+  }
+
+  // editarUsuario(_id: String) : Observable<any> {
+  //   return
+  // } 
   logout(){
     localStorage.removeItem("token");
     this.router.navigate(['/login']);

@@ -9,6 +9,7 @@ import { FavoritosComponent } from './componentes/favoritos/favoritos.component'
 
 import { AuthGuard } from './auth.guard';
 import { PanelAdminComponent } from './componentes/panel-admin/panel-admin.component';
+import { GestionUsuariosComponent } from './componentes/gestion-usuarios/gestion-usuarios.component';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'/home'},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:'restaurantes/:id', component:RestauranteDetalleComponent},
   {path:'registro', component:RegistroComponent},
   {path:'favoritos', component:FavoritosComponent, canActivate:[AuthGuard]},
-  {path:'panelAdmin', component:PanelAdminComponent},
+  {path:'panelAdmin', component:PanelAdminComponent, canActivate:[AuthGuard]},
+  {path:'gestionUsuarios', component:GestionUsuariosComponent, canActivate:[AuthGuard]},
   {path: '**',pathMatch: 'full',redirectTo:'/home'}
 ];
 

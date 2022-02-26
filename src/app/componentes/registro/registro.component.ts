@@ -12,6 +12,7 @@ export class RegistroComponent implements OnInit {
   user = {
     email : "",
     password : "",
+    admin : true,
     favoritos : []
   };
 
