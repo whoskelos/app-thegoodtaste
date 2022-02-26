@@ -7,7 +7,6 @@
                     <th>ID</th>
                     <th>Email</th>
                     <th>Password</th>
-                    <th>Editar</th>
                     <th>Eliminar</th>
                 </tr>
             </thead>
@@ -16,9 +15,6 @@
                     <td scope="row">{{ user._id }}</td>
                     <td>{{ user.email }}</td>
                     <td> *********</td>
-                    <td (click)="mostrarForm()" class="text-primary">
-                        <fa-icon [icon]="faEdit" size="lg"></fa-icon>
-                    </td>
                     <td (click)="eliminarUsuario(user._id)" class="text-danger">
                         <fa-icon [icon]="faTrash" size="lg"></fa-icon>
                     </td>
@@ -26,13 +22,16 @@
             </tbody>
         </table>
     </div>
-    <div class="col" *ngIf="!!mostrarFormulario">
-        <h1 class="text-center my-4">Editar Usuario</h1>
+    <div class="col">
+        <h1 class="text-center my-4">Nuevo Usuario</h1>
         <div class="container text-white">
             <div class="form">
-                <form class="login-form">
-                    <input type="text" name="email" placeholder="email" />
-                    <input type="password" name="password" placeholder="password" />
+                <!--damos un nombre al formulario al formulario-->
+                <!--le decimos que en el evento submit llama a nuestra funcion registrarEmpleado que es la que esta en el .ts y le pasamos nuestro formulario-->
+                <form class="login-form" #usuarioForm="ngForm" (ngSubmit)="registrarEmpleado(usuarioForm)">
+                    <!--para coger los valores de los inputs es con [(ngModel)] y le decimos que de nuestro servicio al objeto user que propiedad vamos a guardar-->
+                    <input type="text" required name="email" placeholder="email" [(ngModel)]="authservice.user.email" />
+                    <input type="password" required minlength="6" name="password" placeholder="password" [(ngModel)]="authservice.user.password" />
                     <button class="bg-danger">Registrar</button>
                 </form>
             </div>

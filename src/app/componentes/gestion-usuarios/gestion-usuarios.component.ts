@@ -4,6 +4,7 @@ import { Usuarios } from 'src/app/models/usuario';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-gestion-usuarios',
@@ -17,7 +18,6 @@ export class GestionUsuariosComponent implements OnInit {
   faTrash = faTrash;
 
   public usuarios !: Usuarios[];
-  mostrarFormulario!:Boolean;
 
 
   constructor(
@@ -36,7 +36,6 @@ export class GestionUsuariosComponent implements OnInit {
     this.authservice.getUsuarios().subscribe(
       res => {
         this.usuarios = res;
-        console.log(this.usuarios);
       },
       err => console.log(err)
     );
@@ -45,15 +44,22 @@ export class GestionUsuariosComponent implements OnInit {
   eliminarUsuario(_id: String){
     this.authservice.eliminarUsuario(_id).subscribe(
       res => {
-        console.log("usuario eliminado");
         this.getUsuarios();
       },
       err => console.log(err)
     );
   }
 
-  mostrarForm():void{
-    this.mostrarFormulario = true;
+  registrarEmpleado(form: NgForm){ //le paso el objeto formulario
+    //llamo al servicio a la funcion registrar y le paso los values del formulario
+    this.authservice.registrarse(form.value).subscribe(
+      res => {
+        //si todo okay, llamo de nuevo a obtener usuarios para que actulice la vista y reinicio el formulario
+        this.getUsuarios();
+        form.reset();
+      },
+      err => console.log(err)
+    )
   }
 
 }

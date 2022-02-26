@@ -11,6 +11,13 @@ export class AuthServiceService {
 
   api = "http://localhost:3000/api/users";
 
+  public user: Usuarios = {
+    _id: "",
+    email: "",
+    password: "",
+    favoritos: []
+  };
+
   constructor(
     private http:HttpClient,
     private router:Router
