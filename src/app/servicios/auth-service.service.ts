@@ -51,9 +51,6 @@ export class AuthServiceService {
     return this.http.delete(this.api + `/${_id}`);
   }
 
-  // editarUsuario(_id: String) : Observable<any> {
-  //   return
-  // } 
   logout(){
     localStorage.removeItem("token");
     this.router.navigate(['/login']);

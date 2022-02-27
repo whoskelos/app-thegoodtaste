@@ -20,7 +20,7 @@
             </ul>
 
             <ul class="navbar-nav ms-auto">
-                <ng-container *ngIf="!authservice.estaLogueado() || !authservice.esAdmin() ;else logueado">
+                <ng-container *ngIf="!authservice.estaLogueado();else logueado">
                     <li class="nav-item">
                         <a id="btn-login" class="btn btn-outline-danger rounded" routerLink="/login"
                             role="button">Login</a>

@@ -23,7 +23,7 @@ export class GestionUsuariosComponent implements OnInit {
   constructor(
     public authservice: AuthServiceService,
     public route: ActivatedRoute
-    ) { 
+  ) {
     // this.id = this.route.snapshot.params["id"];
   }
 
@@ -41,16 +41,18 @@ export class GestionUsuariosComponent implements OnInit {
     );
   }
 
-  eliminarUsuario(_id: String){
-    this.authservice.eliminarUsuario(_id).subscribe(
-      res => {
-        this.getUsuarios();
-      },
-      err => console.log(err)
-    );
+  eliminarUsuario(_id: String) {
+    if (confirm("Estas seguro de eliminar el usuario?")) {
+      this.authservice.eliminarUsuario(_id).subscribe(
+        res => {
+          this.getUsuarios();
+        },
+        err => console.log(err)
+      );
+    }
   }
 
-  registrarEmpleado(form: NgForm){ //le paso el objeto formulario
+  registrarEmpleado(form: NgForm) { //le paso el objeto formulario
     //llamo al servicio a la funcion registrar y le paso los values del formulario
     this.authservice.registrarse(form.value).subscribe(
       res => {

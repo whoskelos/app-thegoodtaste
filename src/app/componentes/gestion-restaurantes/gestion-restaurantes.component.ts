@@ -40,19 +40,21 @@ export class GestionRestaurantesComponent implements OnInit {
 
   //elimino el restaurante seleccionado
   eliminarRestaurante(_id: string) {
-    this.restauranteservice.deleteRestaurante(_id).subscribe(
-      res => {
-        this.getRestaurantes();
-      },
-      err => console.log(err)
-    )
+    if (confirm("Confirmas antes de eliminar?")) {
+      this.restauranteservice.deleteRestaurante(_id).subscribe(
+        res => {
+          this.getRestaurantes();
+        },
+        err => console.log(err)
+      )
+    }
   }
 
   addRestaurante(form: NgForm) {
 
     if (form.value._id) {
       this.restauranteservice.putRestaurante(form.value).subscribe(
-        res =>{
+        res => {
           console.log(res);
         },
         err => console.log(err)
