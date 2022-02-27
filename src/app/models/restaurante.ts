@@ -1,6 +1,6 @@
 export class Restaurante{
     constructor (
-    public _id: String,
+    public _id: string,
     public nombre: string,
     public ubicacion:string,
     public tipo:string,

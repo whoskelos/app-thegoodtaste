@@ -21,6 +21,7 @@ import { PanelAdminComponent } from './componentes/panel-admin/panel-admin.compo
 import { FilterPipe } from './pipes/filter.pipe';
 import { Filter2Pipe } from './pipes/filter2.pipe';
 import { GestionUsuariosComponent } from './componentes/gestion-usuarios/gestion-usuarios.component';
+import { GestionRestaurantesComponent } from './componentes/gestion-restaurantes/gestion-restaurantes.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { GestionUsuariosComponent } from './componentes/gestion-usuarios/gestion
     PanelAdminComponent,
     FilterPipe,
     Filter2Pipe,
-    GestionUsuariosComponent
+    GestionUsuariosComponent,
+    GestionRestaurantesComponent
   ],
   imports: [
     BrowserModule,

@@ -12,13 +12,24 @@ export class RestauranteService {
 
   restaurantes !: Restaurante[];
 
+  public restaurante : Restaurante = {
+    _id: "",
+    nombre: "",
+    tipo: "",
+    ubicacion: "",
+    likes: 0,
+    descripcion: "",
+    comentarios: [],
+    foto: ""
+  }
+
   constructor(private http: HttpClient) { }
 
   getRestaurantes(){
     return this.http.get<Restaurante[]>(this.api);
   }
 
-  postRestaurante(Restaurante: Restaurante){
+  postRestaurante(Restaurante: any){
     return this.http.post(this.api,Restaurante);
   }
 
@@ -30,8 +41,8 @@ export class RestauranteService {
   //   return this.http.put(this.api + `/${Restaurante._id}`,Restaurante);
   // }
 
-  // deleteRestaurante(_id: string){
-  //   return this.http.delete(this.api + `/${_id}`)
-  // }
+  deleteRestaurante(_id: string){
+    return this.http.delete(this.api + `/${_id}`)
+  }
 
 }
