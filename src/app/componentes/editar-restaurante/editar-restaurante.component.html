@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col">
+        <h1 class="text-center my-4">Edicion de registro</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="container text-white">
+            <div class="form">
+                <!--damos un nombre al formulario al formulario-->
+                <!--le decimos que en el evento submit llama a nuestra funcion addRestaurante que es la que esta en el .ts y le pasamos nuestro formulario-->
+                <form class="login-form" #restauranteForm="ngForm" (ngSubmit)="editarRestaurante(restauranteForm)">
+                    <!--para coger los valores de los inputs es con [(ngModel)] y le decimos que de nuestro servicio al objeto restaurante que propiedad vamos a guardar-->
+                    <input type="text" required name="nombre" placeholder="Nombre" [(ngModel)]="restauranteservice.restaurante.nombre" />
+                    <input type="text" required name="tipo" placeholder="Tipo" [(ngModel)]="restauranteservice.restaurante.tipo" />
+                    <input type="text" required name="ubicacion" placeholder="Ubicacion" [(ngModel)]="restauranteservice.restaurante.ubicacion" />
+                    <input type="number" required name="likes" placeholder="Inserte numero" [(ngModel)]="restauranteservice.restaurante.likes" />
+                    <textarea name="descripcion" cols="30" rows="6" placeholder="Escribe una descripcion" [(ngModel)]="restauranteservice.restaurante.descripcion"></textarea>
+                    <input type="text" required name="foto" placeholder="ej: pulpo.jpg" [(ngModel)]="restauranteservice.restaurante.foto" />
+                    <button class="bg-danger">Anadir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,14 +13,14 @@ import { RestauranteService } from 'src/app/servicios/restaurante.service';
 })
 export class GestionRestaurantesComponent implements OnInit {
 
-    //iconos
-    faEdit = faEdit;
-    faTrash = faTrash;
+  //iconos
+  faEdit = faEdit;
+  faTrash = faTrash;
 
-    public restaurantes !: Restaurante[];
+  public restaurantes !: Restaurante[];
 
   constructor(
-    public restauranteservice:RestauranteService,
+    public restauranteservice: RestauranteService,
     public route: ActivatedRoute
   ) { }
 
@@ -29,7 +29,7 @@ export class GestionRestaurantesComponent implements OnInit {
   }
 
   //obtengo los restaurantes
-  getRestaurantes(){
+  getRestaurantes() {
     this.restauranteservice.getRestaurantes().subscribe(
       res => {
         this.restaurantes = res;
@@ -39,7 +39,7 @@ export class GestionRestaurantesComponent implements OnInit {
   }
 
   //elimino el restaurante seleccionado
-  eliminarRestaurante(_id: string){
+  eliminarRestaurante(_id: string) {
     this.restauranteservice.deleteRestaurante(_id).subscribe(
       res => {
         this.getRestaurantes();
@@ -48,14 +48,33 @@ export class GestionRestaurantesComponent implements OnInit {
     )
   }
 
-  addRestaurante(form: NgForm){
-    this.restauranteservice.postRestaurante(form.value).subscribe(
-      res => {
-        this.getRestaurantes();
-        form.reset();
-      },
-      err => console.log(err)
-    );
+  addRestaurante(form: NgForm) {
+
+    if (form.value._id) {
+      this.restauranteservice.putRestaurante(form.value).subscribe(
+        res =>{
+          console.log(res);
+        },
+        err => console.log(err)
+      );
+    } else {
+      this.restauranteservice.postRestaurante(form.value).subscribe(
+        res => {
+          this.getRestaurantes();
+          form.reset();
+        },
+        err => console.log(err)
+      );
+    }
+  }
+
+
+  editRestaurante(restaurante: any) {
+    this.restauranteservice.restaurante = restaurante;
+  }
+
+  resetForm(form: NgForm) {
+    form.reset();
   }
 
 }

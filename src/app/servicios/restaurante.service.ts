@@ -37,9 +37,9 @@ export class RestauranteService {
     return this.http.get(this.api + `/${_id}`)
   }
   
-  // putRestaurante(Restaurante: Restaurante){
-  //   return this.http.put(this.api + `/${Restaurante._id}`,Restaurante);
-  // }
+  putRestaurante(Restaurante: any){
+    return this.http.put(this.api + `/${Restaurante._id}`,Restaurante);
+  }
 
   deleteRestaurante(_id: string){
     return this.http.delete(this.api + `/${_id}`)

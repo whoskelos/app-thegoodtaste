@@ -22,6 +22,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { Filter2Pipe } from './pipes/filter2.pipe';
 import { GestionUsuariosComponent } from './componentes/gestion-usuarios/gestion-usuarios.component';
 import { GestionRestaurantesComponent } from './componentes/gestion-restaurantes/gestion-restaurantes.component';
+import { EditarRestauranteComponent } from './componentes/editar-restaurante/editar-restaurante.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { GestionRestaurantesComponent } from './componentes/gestion-restaurantes
     FilterPipe,
     Filter2Pipe,
     GestionUsuariosComponent,
-    GestionRestaurantesComponent
+    GestionRestaurantesComponent,
+    EditarRestauranteComponent,
   ],
   imports: [
     BrowserModule,

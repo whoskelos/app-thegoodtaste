@@ -11,6 +11,7 @@ import { AuthGuard } from './auth.guard';
 import { PanelAdminComponent } from './componentes/panel-admin/panel-admin.component';
 import { GestionUsuariosComponent } from './componentes/gestion-usuarios/gestion-usuarios.component';
 import { GestionRestaurantesComponent } from './componentes/gestion-restaurantes/gestion-restaurantes.component';
+import { EditarRestauranteComponent } from './componentes/editar-restaurante/editar-restaurante.component';
 
 const routes: Routes = [
   {path: '',pathMatch:'full', redirectTo:'/home'},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'panelAdmin', component:PanelAdminComponent, canActivate:[AuthGuard]},
   {path:'gestionUsuarios', component:GestionUsuariosComponent, canActivate:[AuthGuard]},
   {path:'gestionRestaurantes', component:GestionRestaurantesComponent, canActivate:[AuthGuard]},
+  {path: 'editarRestaurante/:id', component:EditarRestauranteComponent,canActivate:[AuthGuard]},
   {path: '**',pathMatch: 'full',redirectTo:'/home'}
 ];
 
