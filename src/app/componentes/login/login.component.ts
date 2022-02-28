@@ -26,15 +26,12 @@ export class LoginComponent implements OnInit {
     this.authservice.iniciarSesion(this.user)
       .subscribe(
         res => {
-          if (res.status == "admin") {
-            localStorage.setItem("admin",res.status);
+          if (res.admin == true) {
+            localStorage.setItem("user", res.email);
             this.router.navigate(['/panelAdmin']);
-          }
-          if (res.token) {
-            localStorage.setItem("token", res.token)
-            this.router.navigate(['/favoritos'])
-            console.log(res.token);
-
+          } else {
+            localStorage.setItem("user", res.email);
+            this.router.navigate(['/favoritos']);
           }
         },
         err => console.log(err)

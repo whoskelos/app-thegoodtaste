@@ -37,7 +37,7 @@ export class RestauranteDetalleComponent implements OnInit {
 
   //en esta funcion deberia de poder guardar el id del restaurante en el array favoritos que tiene cada usuario
   marcarFavorito(){
-    console.log(this.id);
+    console.log("En proceso");
   }
 
 

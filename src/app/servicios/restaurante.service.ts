@@ -30,7 +30,7 @@ export class RestauranteService {
   }
 
   postRestaurante(Restaurante: any){
-    return this.http.post(this.api,Restaurante);
+    return this.http.post<any>(this.api,Restaurante);
   }
 
   getRestauranteById(_id: string) : Observable<any>{

@@ -18,21 +18,17 @@ userCtrl.crearUser = async (req, res) => {
 };
 
 userCtrl.getUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, admin } = req.body;
   const user = await User.findOne({ email });
   if (!user) {
     return res.status(401).send("El email no existe");
-  } else {
-    if (user.admin == true) {
-    return res.json({ status: "admin" });
-    }
   }
   if (user.password !== password) {
     return res.status(401).send("Contrasena erronea");
   }
 
-  const token = jwt.sign({ _id: user._id,admin: user.admin }, "secretKey");
-  res.status(200).json({ token });
+  const token = jwt.sign({ _id: user._id }, "secretKey");
+  res.status(200).json(user);
 };
 
 userCtrl.editarUser = async (req, res) => {
@@ -60,7 +56,8 @@ userCtrl.verifyToken = (req, res, next) => {
   }
 
   const payload = jwt.verify("secretKey");
-  console.log(payload);
+  req.userId = payload._id;
+  next();
 };
 
 module.exports = userCtrl;

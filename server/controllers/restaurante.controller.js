@@ -1,5 +1,5 @@
 const Restaurante = require('../models/restaurante');
-
+const mongoose = require('mongoose');
 const restauranteCtrl = {};
 
 restauranteCtrl.getRestaurantes = async (req,res) => {
@@ -9,6 +9,8 @@ restauranteCtrl.getRestaurantes = async (req,res) => {
 
 restauranteCtrl.crearRestaurante = async (req,res) => {
     const restaurante = new Restaurante(req.body);
+    restaurante._id = new mongoose.Types.ObjectId();
+    console.log(restaurante);
     await restaurante.save();
     res.json({
         'status': 'Restaurante guardado'

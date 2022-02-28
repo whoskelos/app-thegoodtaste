@@ -32,11 +32,7 @@ export class AuthServiceService {
   }
 
   estaLogueado(){
-    return !!localStorage.getItem("token");
-  }
-
-  esAdmin(){
-    return !!localStorage.getItem("admin");
+    return !!localStorage.getItem("user");
   }
 
   getToken(){
@@ -52,7 +48,7 @@ export class AuthServiceService {
   }
 
   logout(){
-    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     this.router.navigate(['/login']);
   }
 }

@@ -39,7 +39,7 @@ export class GestionRestaurantesComponent implements OnInit {
   }
 
   //elimino el restaurante seleccionado
-  eliminarRestaurante(_id: string) {
+  eliminarRestaurante(_id: any) {
     if (confirm("Confirmas antes de eliminar?")) {
       this.restauranteservice.deleteRestaurante(_id).subscribe(
         res => {
@@ -51,7 +51,6 @@ export class GestionRestaurantesComponent implements OnInit {
   }
 
   addRestaurante(form: NgForm) {
-
     if (form.value._id) {
       this.restauranteservice.putRestaurante(form.value).subscribe(
         res => {
@@ -62,8 +61,7 @@ export class GestionRestaurantesComponent implements OnInit {
     } else {
       this.restauranteservice.postRestaurante(form.value).subscribe(
         res => {
-          this.getRestaurantes();
-          form.reset();
+          console.log(res);
         },
         err => console.log(err)
       );
