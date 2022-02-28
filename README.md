@@ -4,24 +4,33 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve -o` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Requisitos para abrir el proyecto
+Tener instaldo: 
+*Node.js versiones anteriores a la v.17*
+*mongoDB*
+*NPM*
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Librerias utilizadas para el backend
 
-## Build
+*express,mongoose,cors,morgan*
+## Pasos previos para inicializar el proyecto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+EN S.O Windows, si es la primera vez que instalas mongodbm hay que crear una carpeta llamada data en C: y dentro otra llamada db, es necesario para que mongo funciones correctamente.
 
-## Running unit tests
+Recuerda realizar npm install para instalar todas las dependencias necesarias
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+La conexion con el servidor se inicializa con el comando *npm run dev*
 
-## Running end-to-end tests
+## La parte de administracion se requiere de un usuario admin:
+usuario administrador -- *registra un usuario con postman que tenga true la parte de atributo admin*
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Comentarios
+La pagina esta incompleta quedan muchas cosas por pulir, pero es lo que me ha dado tiempo a hacer, la parte del login con JWT, tengo que aprender a trabajar con roles ya que en este proyecto no he sido capaz.
 
-## Further help
+La restrinccion de las rutas tampoco estan bien del todo.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para añadir imagenes escribir un nombre de una imagen que se encuentre en la carpeta *assets/img*
+
+

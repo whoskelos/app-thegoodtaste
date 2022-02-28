@@ -10,3 +10,7 @@ img{
     width: 45px;
     cursor: pointer;
 }
+
+.iconos img{
+    width: 70px;
+}

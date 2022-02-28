@@ -7,7 +7,7 @@
         </div>
 
         <div class="d-flex justify-content-center">
-            <a name="" id="" class="btn btn-danger" routerLink="/" role="button">Saber más</a>
+            <a name="" id="" class="btn btn-danger" routerLink="/restaurantes" role="button">Ver más</a>
         </div>
     </div>
     <!-- ========== Start carousel ========== -->
@@ -45,34 +45,16 @@
 
         <div class="d-sm-flex justify-content-sm-between">
 
-            <div class="d-flex flex-column align-items-center">
+            <div class="d-flex flex-column align-items-center" *ngFor="let top of topRestaurantes">
                 <div>
                     <img class="imgFavorito" src="assets/img/estrella.png" alt="favorito">
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="assets/img/hamburguesa.jpg" alt="foto del restaurante">
+                    <a routerLink="/restaurantes/{{top._id}}">
+                        <img class="card-img-top" src="assets/img/{{ top.foto }}" alt="{{ top.nombre }}">
+                    </a>
                 </div>
             </div>
-
-            <div class="d-flex flex-column align-items-center">
-                <div>
-                    <img class="imgFavorito" src="assets/img/estrella.png" alt="favorito">
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="assets/img/india.jpg" alt="foto del restaurante">
-                </div>
-            </div>
-
-            <div class="d-flex flex-column align-items-center">
-                <div>
-                    <img class="imgFavorito" src="assets/img/estrella.png" alt="favorito">
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="assets/img/pulpo.jpg" alt="foto del restaurante">
-                </div>
-            </div>
-
-
         </div>
 
     </div>
