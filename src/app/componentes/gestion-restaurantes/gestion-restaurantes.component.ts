@@ -54,14 +54,14 @@ export class GestionRestaurantesComponent implements OnInit {
     if (form.value._id) {
       this.restauranteservice.putRestaurante(form.value).subscribe(
         res => {
-          console.log(res);
+          this.getRestaurantes();
         },
         err => console.log(err)
       );
     } else {
       this.restauranteservice.postRestaurante(form.value).subscribe(
         res => {
-          console.log(res);
+          this.getRestaurantes();
         },
         err => console.log(err)
       );
