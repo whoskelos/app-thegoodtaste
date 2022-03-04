@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "start": "node server/index.js",
     "dev": "nodemon server/index.js"
   },
   "private": true,
@@ -24,6 +24,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.2",
+    "firebase": "^9.6.7",
+    "firebase-tools": "^10.2.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.1",
     "morgan": "^1.10.0",
