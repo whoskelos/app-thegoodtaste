@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class RestauranteService {
 
-  api = 'http://localhost:3000/api/restaurantes';
+  api = '/api/restaurantes';
 
   restaurantes !: Restaurante[];
 
