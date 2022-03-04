@@ -9,9 +9,9 @@ const { mongoose } = require('./database');
 //Configuracion
 app.set('port', process.env.PORT || 3000);
 
-app.use(express.static(__dirname + '/dist/app-thegoodtaste'));
+app.use(express.static(__dirname + '../dist/app-thegoodtaste'));
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/app-thegoodtaste/index.html'));
+  res.sendFile(path.join(__dirname + '../dist/app-thegoodtaste/index.html'));
 });
 
 //Middlewares
