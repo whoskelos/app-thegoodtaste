@@ -1,6 +1,7 @@
 const express  = require ('express');
 const morgan = require('morgan');
 const app = express();
+const path = require('path');
 const cors = require('cors');
 
 const { mongoose } = require('./database');
