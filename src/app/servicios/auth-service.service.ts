@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthServiceService {
 
-  api = "/api/users";
+  api = "api/users";
 
   public user: Usuarios = {
     _id: "",

@@ -9,11 +9,15 @@ const { mongoose } = require('./database');
 //Configuracion
 app.set('port', process.env.PORT || 3000);
 
-// app.use(express.static(path.join(__dirname, 'dist/app-thegoodtaste')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'dist/app-thegoodtaste/index.html/'));
-// });
+app.get('/', (req,res) => {
+  res.send('Invalid Endpoint');
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
 
 //Middlewares
 app.use(morgan('dev'));
