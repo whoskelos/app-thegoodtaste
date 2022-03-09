@@ -1,28 +1,17 @@
 const express  = require ('express');
 const morgan = require('morgan');
 const app = express();
-const path = require('path');
 const cors = require('cors');
 
 const { mongoose } = require('./database');
 
 //Configuracion
-app.set('port', process.env.PORT || 3000);
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/', (req,res) => {
-  res.send('Invalid Endpoint');
-});
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
-});
+app.set('port',process.env.PORT || 3000);
 
 //Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
-// app.use(cors({origin:'http://localhost:4200'}));
+app.use(cors({origin:'http://localhost:4200'}));
 
 
 //Rutas
